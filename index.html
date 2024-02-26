@@ -1,22 +1,11 @@
 <!DOCTYPE html>
 <html>
 <body>
-
-<h1>JavaScript Prompt</h1>
-
-<button onclick="myFunction()">Try it</button>
-
-<p id="demo"></p>
-
-<script>
-function myFunction() {
-  var person = prompt("Please enter your name", "Harry Potter");
-  if (person != null) {
-    document.getElementById("demo").innerHTML =
-    "Hello " + person + "! How are you today?";
-  }
-}
-</script>
-
+    <h2>Login</h2>
+    <input type="text" id="username" placeholder="Username">
+    <input type="password" id="password" placeholder="Password">
+    <button onclick="login()">Login</button>
+    <button onclick="window.location.href='signup.html'">Signup</button>
+    <script src="index.js"></script>
 </body>
 </html>
