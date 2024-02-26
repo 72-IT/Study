@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Login</title>
+</head>
+<body>
+    <h2>Login Page</h2>
+
+    <label for="uname"><b>Username</b></label>
+    <input type="text" placeholder="Enter Username" id="uname" required>
+
+    <label for="psw"><b>Password</b></label>
+    <input type="password" placeholder="Enter Password" id="psw" required>
+
+    <button onclick="login()">Login</button>
+
+    <script>
+        async function login() {
+            var username = document.getElementById("uname").value;
+            var password = document.getElementById("psw").value;
+
+            const response = await fetch('http://localhost:3000/login', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({ username, password })
+            });
+
+            if (response.status === 200) {
+                window.location = "success.html";
+            } else {
+                alert("Invalid username or password");
+            }
+        }
+    </script>
+
+</body>
+</html>
