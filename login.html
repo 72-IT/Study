@@ -13,6 +13,7 @@
     <input type="password" placeholder="Enter Password" id="psw" required>
 
     <button onclick="login()">Login</button>
+    <button onclick="signup()">Signup</button>
 
     <script>
         async function login() {
@@ -31,6 +32,25 @@
                 window.location = "success.html";
             } else {
                 alert("Invalid username or password");
+            }
+        }
+
+        function signup() {
+            var username = document.getElementById("uname").value;
+            var password = document.getElementById("psw").value;
+
+            const response = await fetch('http://localhost:3000/signup', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({ username, password })
+            });
+
+            if (response.status === 200) {
+                window.location = "success.html";
+            } else {
+                alert("Signup failed");
             }
         }
     </script>
