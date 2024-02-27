@@ -2,6 +2,7 @@ const express = require('express');
 const bcrypt = require('bcrypt');
 const low = require('lowdb');
 const FileSync = require('lowdb/adapters/FileSync');
+const path = require('path');
 
 const adapter = new FileSync('db.json');
 const db = low(adapter);
@@ -39,9 +40,19 @@ app.post('/login', async (req, res) => {
 app.get('/welcome', (req, res) => {
     if (req.session && req.session.user) {
         return res.status(200).send('Welcome!');
+        res.sendFile(__dirname + '/welcome.html');
     }
 
     res.status(401).send('Please log in');
+    res.sendFile(__dirname + '/index.html');
+});
+
+app.get('/', (req, res) => {
+    res.sendFile(__dirname + '/index.html');
+});
+
+app.get('/signup', (req, res) => {
+    res.sendFile(__dirname + '/signup.html');
 });
 
 app.listen(3000, () => console.log('Server started on port 3000'));
