@@ -1,3 +1,8 @@
 {
-  "users": []
+  "users": [
+    {
+      "username": "emerson",
+      "password": "$2b$10$ewdi4AZze0A5JPrLP2SGTuumxF1rL3qzQUI//bDWmAPAdy058Ywiq"
+    }
+  ]
 }
