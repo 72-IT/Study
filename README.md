@@ -6,6 +6,7 @@ Table of Contents
 
 Description
 Languages
+Features
 Installation
 Usage
 Contributing
@@ -20,6 +21,11 @@ The repository is composed of the following languages:
 
 JavaScript: 75%
 HTML: 25%
+Features
+
+User authentication system using Express.js and bcrypt.
+Simple front-end pages for login, signup, and welcome.
+Lightweight database using lowdb for storing user data.
 Installation
 
 To get started, clone the repository and install the necessary dependencies:
@@ -29,12 +35,13 @@ cd Study
 npm install
 Usage
 
-You can run the projects or examples by navigating to the specific directory and following the instructions provided in each project's README file or documentation.
+You can run the server and access the application by following these steps:
 
-Example to run a JavaScript project:
+Start the server:
 
-cd path/to/project
-node app.js
+node server.js
+Open your browser and navigate to http://localhost:3000.
+
 Contributing
 
 Contributions are welcome! Please follow these steps:
